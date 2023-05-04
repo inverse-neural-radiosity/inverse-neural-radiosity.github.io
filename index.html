@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -52,11 +53,11 @@
             <h1 class="title is-1 publication-title">Inverse Global Illumination <br />using a Neural Radiometric Prior</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block"><a href="#" target="_blank">Saeed Hadadan</a><sup>1,2</sup>,</span>
-              <span class="author-block"><a href="#" target="_blank">Geng Lin</a><sup>1</sup>,</span>
-              <span class="author-block"><a href="#" target="_blank">Jan Novák</a><sup>2</sup>,</span>
-              <span class="author-block"><a href="#" target="_blank">Fabrice Rousselle</a><sup>2</sup>,</span>
-              <span class="author-block"><a href="#" target="_blank">Matthias Zwicker</a><sup>1</sup></span>
+              <span class="author-block"><a href="https://www.cs.umd.edu/~saeedhd" target="_blank">Saeed Hadadan</a><sup>1,2</sup>,</span>
+              <span class="author-block"><a href="https://www.cs.umd.edu/people/geng" target="_blank">Geng Lin</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://research.nvidia.com/person/jan-novak" target="_blank">Jan Novák</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://research.nvidia.com/person/fabrice-rousselle" target="_blank">Fabrice Rousselle</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://www.cs.umd.edu/~zwicker/" target="_blank">Matthias Zwicker</a><sup>1</sup></span>
             </div>
 
             <div class="is-size-5 publication-authors">
@@ -70,25 +71,37 @@
               <div class="publication-links">
                 <!-- Arxiv link -->
                 <span class="link-block">
-                  <a href="javascript:" target="_blank"
+                  <a href="https://arxiv.org/abs/2305.02192" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Paper <sup>Coming Soon</sup></span>
+                    <span>Paper</span>
                   </a>
                 </span>
 
                 <!-- Supplementary PDF link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="javascript:" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Supplementary <sup>Coming Soon</sup></span>
+                    <span>Supplementary document</sup></span>
+                  </a>
+                </span> -->
+
+                <!-- Publisher version link -->
+                <span class="link-block">
+                  <a href="javascript:" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-acm"></i>
+                    </span>
+                    <span>Publisher version</sup></span>
                   </a>
                 </span>
+
 
                 <!-- Github link -->
                 <span class="link-block">
@@ -132,32 +145,29 @@
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
             <!-- Your image here -->
-            <img src="static/images/teaser.png" alt="Teaser Image" />
-            <h2 class="subtitle has-text-centered">
-              Teaser image.
+            <img src="static/images/teaser.jpg" alt="Teaser Image" />
+            <h2 class="subtitle has-text-justified">
+              We propose an inverse rendering method that uses a radiometric prior to account for global illumination as opposed to building and differentiating path integrals. Our method uses standard automatic differentiation (AD) to compute gradients with respect to the scene parameters, while satisfying the rendering equation using our radiometric prior, which is represented by a neural network. Here we compare a traditional auto-differentiable path tracer (AD-PT), an advanced technique (Path Replay Backpropagation, or PRB), and our method (AD-Ours) for recovering non-diffuse spatially varying BRDF properties (also represented as neural networks) under known illumination and geometry from 26 views of the Staircase scene. Despite its simplicity, our approach takes into account global illumination, and more faithfully recovers albedo and roughness compared to differentiable path tracing and PRB. Each method used a total of 16384 × 16 × 18000 (batch size × spp × steps) = 4.7B samples, i.e., 690 training samples per pixel (26 views × 512 × 512 pixels). We conducted all experiments with a single RTX3090 GPU, and the total runtimes for AD-PT, PRB, and our method were 760, 970, and 260 minutes, respectively.
             </h2>
           </div>
-          <div class="item">
-            <!-- Your image here -->
+          <!-- <div class="item">
             <img src="static/images/overview.png" alt="Method Overview" />
             <h2 class="subtitle has-text-centered">
               Overview of our method.
             </h2>
           </div>
           <div class="item">
-            <!-- Your image here -->
             <img src="static/images/scene-stats.png" alt="Scene Performance Comparsion" />
             <h2 class="subtitle has-text-centered">
               Scene statistics and training time comparison.
             </h2>
           </div>
           <div class="item">
-            <!-- Your image here -->
             <img src="static/images/cube.png" alt="Controlled Performance Comparison" />
             <h2 class="subtitle has-text-centered">
               Performance comparison using a controlled diffuse scene.
             </h2>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -181,7 +191,7 @@
   <!-- End youtube video -->
 
   <!-- Paper poster -->
-  <section class="hero is-small is-light">
+  <!-- <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container">
         <h2 class="title">Poster</h2>
@@ -192,14 +202,25 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!--End paper poster -->
 
   <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>Coming Soon</code></pre>
+      <pre><code>
+        @article{https://doi.org/10.48550/arxiv.2305.02192,
+        doi = {10.48550/ARXIV.2305.02192},
+        url = {https://arxiv.org/abs/2305.02192},
+        author = {Hadadan,  Saeed and Lin,  Geng and Novák,  Jan and Rousselle,  Fabrice and Zwicker,  Matthias},
+        keywords = {Computer Vision and Pattern Recognition (cs.CV),  Graphics (cs.GR),  FOS: Computer and information sciences,  FOS: Computer and information sciences},
+        title = {Inverse Global Illumination using a Neural Radiometric Prior},
+        publisher = {arXiv},
+        year = {2023},
+        copyright = {arXiv.org perpetual,  non-exclusive license}
+      }
+    </code></pre>
     </div>
   </section>
   <!--End BibTex citation -->
