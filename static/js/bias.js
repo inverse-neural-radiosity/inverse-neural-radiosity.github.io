@@ -56,7 +56,7 @@ svgs.append('svg')
 
 myfunc('#prb', folder + prbs[0] + '.csv', labels['#prb'][0])
 myfunc('#nerad', folder + nerads[0] + '.csv', labels['#nerad'][0])
-myfunc('#ref', 'data/csv/Ref(Path).csv', labels['#ref'][0])
+myfunc('#ref', folder + 'reference.csv', labels['#ref'][0])
 
 
 function myfunc(name, path, label, update = false) {
