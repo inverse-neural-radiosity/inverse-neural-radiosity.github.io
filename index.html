@@ -22,6 +22,9 @@
   <meta name="keywords" content="Photo-realistic rendering, Ray Tracing, Global Illumination, Differentiable Rendering, Neural Rendering, Neural Radiance Fields">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://unpkg.com/d3-simple-slider"></script>
+  
 
   <title>Inverse Global Illumination using a Neural Radiometric Prior</title>
   <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
@@ -40,6 +43,7 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
 </head>
 
 <body>
@@ -147,9 +151,20 @@
           <!-- Your image here -->
           <img src="static/images/teaser.jpg" alt="Teaser Image" />
           <h2 class="subtitle has-text-justified">
-            We propose an inverse rendering method that uses a radiometric prior to account for global illumination as opposed to building and differentiating path integrals. Our method uses standard automatic differentiation (AD) to compute gradients with respect to the scene parameters, while satisfying the rendering equation using our radiometric prior, which is represented by a neural network. Here we compare a traditional auto-differentiable path tracer (AD-PT), an advanced technique (Path Replay Backpropagation, or PRB), and our method (AD-Ours) for recovering non-diffuse spatially varying BRDF properties (also represented as neural networks) under known illumination and geometry from 26 views of the Staircase scene. Despite its simplicity, our approach takes into account global illumination, and more faithfully recovers albedo and roughness compared to differentiable path tracing and PRB. Each method used a total of 16384 × 16 × 18000 (batch size × spp × steps) = 4.7B samples, i.e., 690 training samples per pixel (26 views × 512 × 512 pixels). We conducted all experiments with a single RTX3090 GPU, and the total runtimes for AD-PT, PRB, and our method were 760, 970, and 260 minutes, respectively.
+            <b>Teaser Figure. </b>We propose an inverse rendering method that uses a radiometric prior to account for global illumination as opposed to building and differentiating path integrals. Our method uses standard automatic differentiation (AD) to compute gradients with respect to the scene parameters, while satisfying the rendering equation using our radiometric prior, which is represented by a neural network. Here we compare a traditional auto-differentiable path tracer (AD-PT), an advanced technique (Path Replay Backpropagation, or PRB), and our method (AD-Ours) for recovering non-diffuse spatially varying BRDF properties (also represented as neural networks) under known illumination and geometry from 26 views of the Staircase scene. Despite its simplicity, our approach takes into account global illumination, and more faithfully recovers albedo and roughness compared to differentiable path tracing and PRB. Each method used a total of 16384 × 16 × 18000 (batch size × spp × steps) = 4.7B samples, i.e., 690 training samples per pixel (26 views × 512 × 512 pixels). We conducted all experiments with a single RTX3090 GPU, and the total runtimes for AD-PT, PRB, and our method were 760, 970, and 260 minutes, respectively.
           </h2>
         </div>
+        <br>
+        <br>
+        <br>
+
+        <div class="item">
+          <div id=Bias>
+          </div>
+          <h2 class="subtitle has-text-justified">
+            <b>Analysis of biased gradients. </b> We visualize gradients with respect to the roughness parameter of the wooden material on the staircase and the picture frames, using different methods. We cap the maximum path length for PRB at each specified number. For our approach, we perform a certain number k of 'differentiable' bounces before querying our radiance cache. The heatmap visualizes magnitude of the gradient of the L2 loss with respect to the roughness parameters over the entire image, comparing the current state with the target state. For unbiased gradients, cells on the diagonal have gradients equal to zero, and non-zero values indicate bias. As shown, direct illumination, PRB with low numbers of bounces, and our method provide biased gradients. Increasing the number k of differentiable bounces reduces bias in our gradients. All results in this paper use 'Ours' with k=1 differentiable bounce, but we sample the residual at an extra bounce. <b>In all visualizations</b>, red indicates negative and blue indicate positive values.</h2>
+        </div>
+
       <!-- </div> -->
     </div>
   </div>
@@ -232,6 +247,7 @@
   <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
   <!-- End of Statcounter Code -->
+  <script src="static/js/bias.js"></script>
 
 </body>
 
