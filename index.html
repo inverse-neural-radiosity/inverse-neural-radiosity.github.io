@@ -142,36 +142,15 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
+      <!-- <div id="results-carousel" class="carousel results-carousel"> -->
         <div class="item">
           <!-- Your image here -->
           <img src="static/images/teaser.jpg" alt="Teaser Image" />
-          <h2 class="subtitle has-text-centered">
-            Teaser image.
+          <h2 class="subtitle has-text-justified">
+            We propose an inverse rendering method that uses a radiometric prior to account for global illumination as opposed to building and differentiating path integrals. Our method uses standard automatic differentiation (AD) to compute gradients with respect to the scene parameters, while satisfying the rendering equation using our radiometric prior, which is represented by a neural network. Here we compare a traditional auto-differentiable path tracer (AD-PT), an advanced technique (Path Replay Backpropagation, or PRB), and our method (AD-Ours) for recovering non-diffuse spatially varying BRDF properties (also represented as neural networks) under known illumination and geometry from 26 views of the Staircase scene. Despite its simplicity, our approach takes into account global illumination, and more faithfully recovers albedo and roughness compared to differentiable path tracing and PRB. Each method used a total of 16384 × 16 × 18000 (batch size × spp × steps) = 4.7B samples, i.e., 690 training samples per pixel (26 views × 512 × 512 pixels). We conducted all experiments with a single RTX3090 GPU, and the total runtimes for AD-PT, PRB, and our method were 760, 970, and 260 minutes, respectively.
           </h2>
         </div>
-        <div class="item">
-          <!-- Your image here -->
-          <img src="static/images/overview.png" alt="Method Overview" />
-          <h2 class="subtitle has-text-centered">
-            Overview of our method.
-          </h2>
-        </div>
-        <div class="item">
-          <!-- Your image here -->
-          <img src="static/images/scene-stats.png" alt="Scene Performance Comparsion" />
-          <h2 class="subtitle has-text-centered">
-            Scene statistics and training time comparison.
-          </h2>
-        </div>
-        <div class="item">
-          <!-- Your image here -->
-          <img src="static/images/cube.png" alt="Controlled Performance Comparison" />
-          <h2 class="subtitle has-text-centered">
-            Performance comparison using a controlled diffuse scene.
-          </h2>
-        </div>
-      </div>
+      <!-- </div> -->
     </div>
   </div>
 </section>
